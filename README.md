@@ -27,3 +27,11 @@ pmtiles show https://r2-public.protomaps.com/protomaps-sample-datasets/terrarium
 ```
 pmtiles extract --bbox=-114.111749,36.937896,-108.97866,42.098695 https://r2-public.protomaps.com/protomaps-sample-datasets/terrarium-z12.pmtiles utah_terrarium.pmtiles
 ```
+
+```
+pmtiles show https://build.protomaps.com/20240607.pmtiles
+```
+
+```
+pmtiles extract --bbox=-114.111749,36.937896,-108.97866,42.098695 https://maps.protomaps.com/builds/20240607.pmtiles utah_basemap.pmtiles
+```

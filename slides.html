@@ -253,10 +253,62 @@ terrain: {
 <section>
     <h3>Protomaps Basemap</h3>
     <ul>
-        <li>vector tiles, Zooms 0-15, OSM + <a target="_blank" href="http://naturalearthdata.com">Natural Earth</a></li>
+        <li>vector tiles, zooms 0-15, OSM + <a target="_blank" href="http://naturalearthdata.com">Natural Earth</a></li>
         <li>5 themes (light, dark, white, grayscale, black)</li>
-        <li>Daily build from fresh OSM data</li>
         <li>View at <a target="_blank" href="https://maps.protomaps.com">maps.protomaps.com</a></li>
+    </ul>
+</section>
+<section>
+    <img class="r-stretch" src="images/builds.png"></img>
+    <p>Daily build incorporates fresh OSM data</p>
+</section>
+<section>
+    <h3>Using PMTiles CLI</h3>
+    <pre>pmtiles show https://builds.protomaps.com/20240607.pmtiles</pre>
+</section>
+<section>
+    <h3>Using PMTiles extract</h3>
+    <pre>pmtiles extract \
+--bbox=-114.111749,36.937896,-108.97866,42.098695 \
+https://builds.protomaps.com/20240607.pmtiles \
+utah_basemap.pmtiles</pre>
+</section>
+<section>
+     <pre><code data-noescape>
+basemap: {
+    type: "vector",
+    url: "pmtiles://../utah_basemap.pmtiles",
+    attribution: '© <a href="https://openstreetmap.org">OpenStreetMap contributors</a>'
+}
+     </code></pre>
+</section>
+<section>
+    <h3>MapLibre style npm package</h3>
+     <pre><code data-noescape>
+const baselayers = protomaps_themes_base.default("basemap", "light"); 
+...
+sprite: "https://protomaps.github.io/basemaps-assets/sprites/v3/light",
+...
+layers: [
+    ...baselayers,
+...
+     </code></pre>
+</section>
+<section>
+    <h3>Customization</h3>
+    <ul>
+        <li>Change the theme</li>
+        <li><strikethrough>Change the language</strikethrough> (coming soon!)</li>
+        <li>Edit OSM and get a new daily build tomorrow!</li>
+    </ul>
+</section>
+<section>
+    <h3>Next Steps</h3>
+    <ul>
+        <li>Modify styles/tiles: <a target="_blank" href="https://github.com/protomaps/basemaps">protomaps/basemaps repo</a></li>
+        <li><a href="https://docs.protomaps.com/pmtiles/cloud-storage" target="_blank">Static storage platforms</a></li>
+        <li><a href="https://docs.protomaps.com/deploy/">CDN integration for high-volume deployments</a></li>
+        <li>Q&A</li>
     </ul>
 </section>
 </div>
