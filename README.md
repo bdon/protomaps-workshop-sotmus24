@@ -1,9 +1,9 @@
 # Parts
 
-[Slides](/slides.html)
-[Part 1](/part1)
-[Part 2](/part2)
-[Part 3](/part3)
+* [Slides](/slides.html)
+* [Part 1](/part1)
+* [Part 2](/part2)
+* [Part 3](/part3)
 
 ## Commands
 
@@ -18,7 +18,10 @@ Utah Bounding Box
 -114.111749,36.937896,-108.97866,42.098695
 ```
 
-PMTiles viewer (bookmark me!)
+* [PMTiles viewer, bookmark me!](pmtiles viewer)
+* [Placemark](https://play.placemark.io)
+* [Protomaps Minutely Extracts](https://app.protomaps.com)
+
 
 ```
 pmtiles show https://r2-public.protomaps.com/protomaps-sample-datasets/terrarium-z12.pmtiles
