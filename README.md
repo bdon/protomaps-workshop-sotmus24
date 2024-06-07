@@ -20,7 +20,7 @@ Utah Bounding Box
 -114.111749,36.937896,-108.97866,42.098695
 ```
 
-* [PMTiles viewer, bookmark me!](pmtiles viewer)
+* [PMTiles viewer, bookmark me!](https://protomaps.github.io/PMTiles/)
 * [Placemark](https://play.placemark.io)
 * [Protomaps Minutely Extracts](https://app.protomaps.com)
 
