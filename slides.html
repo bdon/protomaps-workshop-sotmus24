@@ -20,18 +20,48 @@
     <h2>Protomaps from the Ground Up</h2>
 </section>
 <section>
-    <h1>What problem does this solve?</h1>
+    <p>Protomaps is a solution for interactive web maps, <b>100% open source and under your own control.</b></p>
 </section>
 <section>
-    <h1>Data freshness</h1>
+    <p>What is the <b>status quo?</b></p>
 </section>
 <section>
-    <h1>Tons of Tiles</h1>
+    <img class="r-stretch" src="images/osmcarto.png"></img>
+    <ul>
+        <li>difficult to reproduce</li>
+        <li>raster-based image tiles</li>
+        <li>does not show all / customized OSM data</li>
+    </ul>
 </section>
 <section>
-    <h1>Z/X/Y urls</h1>
-    <h2>Downloading them...</h2>
-    <h2>Scraping them...</h2>
+    <h3>Hosted OSM Tile APIs</h3>
+    <ul>
+        <li>Commercial B2B SaaS offerings</li>
+        <li>Impossible to reproduce</li>
+        <li>Unclear relation to OSM data (filtering, timeliness)</li>
+    </ul>
+</section>
+<section>
+    <h3>Build-your-own Tiles</h3>
+    <ul>
+        <li>Tile server complex to set up and administer</li>
+        <li>Z/X/Y tiles: millions of files difficult to upload/download</li>
+    </ul>
+</section>
+<section>
+    <h3>PMTiles</h3>
+    <ul>
+        <li><a href="http://github.com/protomaps/pmtiles" target="_blank">Single file format</a> for millions+ of tiles</li>
+        <li>"Cloud-native" or "serverless" - Accessed directly in the browser via <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests">HTTP Range Requests</a></li>
+    </ul>
+</section>
+<section>
+    <h3>Protomaps project components</h3>
+    <ul>
+        <li><a target="_blank" href="https://github.com/protomaps/PMTiles/blob/main/spec/v3/spec.md">PMTiles</a> open tile archive format</li>
+        <li><a target="_blank" href="https://github.com/protomaps/pmtiles">Tools and libraries</a> (<a href="https://github.com/protomaps/go-pmtiles">pmtiles cli</a>, JavaScript...)</li>
+        <li>OSM tileset</li>
+    </ul>
 </section>
 <section>
     <h2>Example Use Cases</h2>
@@ -39,7 +69,7 @@
 <section>
     <img class="r-stretch" src="images/historicdetroit.png"></img>
     <p><a target="_blank" href="https://historicdetroit.org">Historic Detroit</a></p>
-    <p>by Matt Hampel</p>
+    <p>by Dan Austin, Helmut Ziewers, Matt Hampel</p>
 </section>
 <section>
     <img class="r-stretch" src="images/bridgewatch.png"></img>
@@ -52,32 +82,27 @@
     <p>by Hanbyul Jo</p>
 </section>
 <section>
-    Protomaps vs. Hosted Services
+    <img class="r-stretch" src="images/planthardiness.png"></img>
+    <p><a target="_blank" href="https://apps.npr.org/plant-hardiness-garden-map">Plant Hardiness Map</a></p>
+    <p>by NPR</p>
 </section>
 <section>
-    Protomaps vs. Databases
+    <h3>PMTiles is made for <b>web-based viewing of large, mostly static</b> datasets.</h3>
 </section>
 <section>
-    When not to use this.
+    <p>Not big? use GeoJSON</p>
+    <img class="r-stretch" src="images/geojsonio.png"></img>
 </section>
 <section>
-    Big, Static datasets on the Web.
-</section>
-<section>
-    Not big? use GeoJSON
-</section>
-<section>
-    Not static? use PostGIS.
+    <p>Not static? use PostGIS.</p>
+    <img src="images/postgis.png"></img>
 </section>
 <section>
     Not on the web? use QGIS.
+    <img src="images/qgis.png"></img>
 </section>
 <section>
-    <h1>Seoul Building Age</h1>
-    by Hanbyul Jo
-</section>
-<section>
-    <h3>What we're making today</h3>
+    <h3>Workshop: What we're making today</h3>
     <img class="r-stretch" src="images/part3.png"></img>
     <p><a target="_blank" href="part3/">(live demo)</a></p>
 </section>
@@ -297,8 +322,9 @@ layers: [
 <section>
     <h3>Customization</h3>
     <ul>
-        <li>Change the theme</li>
-        <li><strikethrough>Change the language</strikethrough> (coming soon!)</li>
+        <li>Change to another premade theme</li>
+        <li><i>Use your own color scheme</i> (coming soon!)</li>
+        <li><i>Change the language</i> (coming soon!)</li>
         <li>Edit OSM and get a new daily build tomorrow!</li>
     </ul>
 </section>
@@ -309,6 +335,7 @@ layers: [
         <li><a href="https://docs.protomaps.com/pmtiles/cloud-storage" target="_blank">Static storage platforms</a></li>
         <li><a href="https://docs.protomaps.com/deploy/">CDN integration for high-volume deployments</a></li>
         <li>Q&A</li>
+        <li>OSMUS Slack #protomaps</li>
     </ul>
 </section>
 </div>
