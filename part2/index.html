@@ -24,7 +24,7 @@
         sources: {
             trails: {
                 type: "vector",
-                url: "pmtiles://../part1/utah_highway_path.pmtiles",
+                url: "pmtiles://../utah_highway_path.pmtiles",
                 attribution: '© <a href="https://openstreetmap.org">OpenStreetMap contributors</a>'
             },
             terrain: {
@@ -67,7 +67,8 @@
                 paint: {
                     "text-halo-color": "white",
                     "text-halo-width": 2
-                }
+                },
+                minzoom: 10
             }
         ]
     };
