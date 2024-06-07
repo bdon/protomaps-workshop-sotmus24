@@ -38,5 +38,5 @@ pmtiles show https://build.protomaps.com/20240607.pmtiles
 ```
 
 ```
-pmtiles extract --bbox=-114.111749,36.937896,-108.97866,42.098695 https://maps.protomaps.com/builds/20240607.pmtiles utah_basemap.pmtiles
+pmtiles extract --bbox=-114.111749,36.937896,-108.97866,42.098695 https://build.protomaps.com/20240607.pmtiles utah_basemap.pmtiles
 ```
