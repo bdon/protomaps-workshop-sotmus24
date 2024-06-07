@@ -1,3 +1,5 @@
+Workshop at [State of the Map US 2024](https://openstreetmap.us/events/state-of-the-map-us/) in Salt Lake City, Utah
+
 # Parts
 
 * [Slides](/slides.html)
