@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SOTM US 2024 | Protomaps from the Ground Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/serif.css" id="theme">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+    <h1>Workshop</h1>
+    <h2>Protomaps from the Ground Up</h2>
+</section>
+<section>
+    <h1>What problem does this solve?</h1>
+</section>
+<section>
+    <h1>Data freshness</h1>
+</section>
+<section>
+    <h1>Tons of Tiles</h1>
+</section>
+<section>
+    <h1>Z/X/Y urls</h1>
+    <h2>Downloading them...</h2>
+    <h2>Scraping them...</h2>
+</section>
+<section>
+    <h2>Example Use Cases</h2>
+</section>
+<section>
+    <img class="r-stretch" src="images/historicdetroit.png"></img>
+    <p><a href="https://historicdetroit.org">Historic Detroit</a></p>
+    <p>by Matt Hampel</p>
+</section>
+<section>
+    <img class="r-stretch" src="images/bridgewatch.png"></img>
+    <p><a href="https://bridge.watch/map">Bridge.Watch</a></p>
+    <p>by Maryanne Watcher</p>
+</section>
+<section>
+    <img class="r-stretch" src="images/seoulbuildingexplorer.png"></img>
+    <p><a href="https://hanbyul-here.github.io/seoul-building-explorer-2024">Seoul Building Explorer</a></p>
+    <p>by Hanbyul Jo</p>
+</section>
+<section>
+    Protomaps vs. Hosted Services
+</section>
+<section>
+    Protomaps vs. Databases
+</section>
+<section>
+    When not to use this.
+</section>
+<section>
+    Big, Static datasets on the Web.
+</section>
+<section>
+    Not big? use GeoJSON
+</section>
+<section>
+    Not static? use PostGIS.
+</section>
+<section>
+    Not on the web? use QGIS.
+</section>
+<section>
+    <h1>Seoul Building Age</h1>
+    by Hanbyul Jo
+</section>
+<section>
+    <h3>What we're making today</h3>
+    <img class="r-stretch" src="images/part3.png"></img>
+    <p><a href="part3/">(live demo)</a></p>
+</section>
+<section>
+    <p>Fork this repo!</p>
+    <p><a href="https://github.com/bdon/protomaps-workshop-sotmus24">github.com/bdon/protomaps-workshop-sotmus24</a></p>
+    <ul>
+        <li>Part 1: displaying a Great Outdoors dataset</li>
+        <li>Part 2: add a terrain PMTiles</li>
+        <li>Part 3: add an OSM basemap</li>
+    </ul>
+</section>
+<section>
+    <h3>What you need</h3>
+    <ul>
+        <li><a href="https://github.com">Git and GitHub account</a></li>
+        <li><a href="https://www.npmjs.com/package/http-server">local HTTP server</a></li>
+        <li><a href="https://github.com/protomaps/go-pmtiles">pmtiles CLI (go-pmtiles)</a></li>
+    </ul>
+</section>
+<section>
+    <h3>Highly recommended</h3>
+    <ul>
+        <li><a href="https://github.com/felt/tippecanoe">tippecanoe</a></li>
+        <li><a href="https://osmcode.org/osmium-tool/">osmium</a></li>
+        <li><a href="https://github.com/onthegomap/planetiler/blob/main/CONTRIBUTING.md">Java 22+</a></li>
+    </ul>
+</section>
+<section>
+    <h1>Part 1</h1>
+</section>
+<section>
+    <h1>MapLibre</h1>
+</section>
+<section>
+    <h1>Let's publish!</h1>
+</section>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        history: true,
+        transition: 'linear'
+    });
+</script>
+</body>
+</html>
