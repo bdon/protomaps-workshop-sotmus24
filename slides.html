@@ -1,9 +1,15 @@
 <html lang="en">
+<style>
+    a {
+        text-decoration: underline !important;
+    }
+</style>
 <head>
     <meta charset="utf-8">
     <title>SOTM US 2024 | Protomaps from the Ground Up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/monokai.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/serif.css" id="theme">
 </head>
 <body>
@@ -32,17 +38,17 @@
 </section>
 <section>
     <img class="r-stretch" src="images/historicdetroit.png"></img>
-    <p><a href="https://historicdetroit.org">Historic Detroit</a></p>
+    <p><a target="_blank" href="https://historicdetroit.org">Historic Detroit</a></p>
     <p>by Matt Hampel</p>
 </section>
 <section>
     <img class="r-stretch" src="images/bridgewatch.png"></img>
-    <p><a href="https://bridge.watch/map">Bridge.Watch</a></p>
+    <p><a target="_blank" href="https://bridge.watch/map">Bridge.Watch</a></p>
     <p>by Maryanne Watcher</p>
 </section>
 <section>
     <img class="r-stretch" src="images/seoulbuildingexplorer.png"></img>
-    <p><a href="https://hanbyul-here.github.io/seoul-building-explorer-2024">Seoul Building Explorer</a></p>
+    <p><a target="_blank" href="https://hanbyul-here.github.io/seoul-building-explorer-2024">Seoul Building Explorer</a></p>
     <p>by Hanbyul Jo</p>
 </section>
 <section>
@@ -73,16 +79,19 @@
 <section>
     <h3>What we're making today</h3>
     <img class="r-stretch" src="images/part3.png"></img>
-    <p><a href="part3/">(live demo)</a></p>
+    <p><a target="_blank" href="part3/">(live demo)</a></p>
 </section>
 <section>
-    100% static site
-    Every major part is hosted on our own platform
-    Data liveness and customization
+    <h3>What this is</h3>
+    <ul>
+        <li>100% static site</li>
+        <li>Every major part is hosted under our own control</li>
+        <li>OSM data liveness and customization</li>
+    </ul>
 </section>
 <section>
     <p>Fork this repo!</p>
-    <p><a href="https://github.com/bdon/protomaps-workshop-sotmus24">github.com/bdon/protomaps-workshop-sotmus24</a></p>
+    <p><a target="_blank" href="https://github.com/bdon/protomaps-workshop-sotmus24">github.com/bdon/protomaps-workshop-sotmus24</a></p>
     <ul>
         <li>Part 1: displaying a Great Outdoors dataset</li>
         <li>Part 2: add a terrain PMTiles</li>
@@ -92,38 +101,173 @@
 <section>
     <h3>What you need</h3>
     <ul>
-        <li><a href="https://github.com">Git and GitHub account</a></li>
-        <li><a href="https://www.npmjs.com/package/http-server">local HTTP server</a></li>
-        <li><a href="https://github.com/protomaps/go-pmtiles">pmtiles CLI (go-pmtiles)</a></li>
+        <li><a target="_blank" href="https://github.com">Git and GitHub account</a></li>
+        <li><a target="_blank" href="https://www.npmjs.com/package/http-server">local HTTP server</a></li>
+        <li><a target="_blank" href="https://github.com/protomaps/go-pmtiles">pmtiles CLI (go-pmtiles)</a></li>
     </ul>
 </section>
 <section>
     <h3>Highly recommended</h3>
     <ul>
-        <li><a href="https://github.com/felt/tippecanoe">tippecanoe</a></li>
-        <li><a href="https://osmcode.org/osmium-tool/">osmium</a></li>
-        <li><a href="https://github.com/onthegomap/planetiler/blob/main/CONTRIBUTING.md">Java 22+</a></li>
+        <li><a target="_blank" href="https://github.com/felt/tippecanoe">tippecanoe</a></li>
+        <li><a target="_blank" href="https://osmcode.org/osmium-tool/">osmium</a></li>
+        <li><a target="_blank" href="https://github.com/onthegomap/planetiler/blob/main/CONTRIBUTING.md">Java 22+</a></li>
     </ul>
 </section>
 <section>
-    <h1>Part 1</h1>
+    <h3>Part 1</h3>
+    <img class="r-stretch" src="images/part1.png"></img>
+    <p><a target="_blank" href="part1/">(live demo)</a></p>
 </section>
 <section>
-    <h1>MapLibre</h1>
+    <h3>Acquiring fresh Utah data</h3>
+    <img class="r-stretch" src="images/protomapsextract.png"></img>
+    <ul>
+        <a target="_blank" href="https://download.geofabrik.de/north-america/us/utah.html">Geofabrik Downloads (Daily)</a>
+        <a target="_blank" href="https://app.protomaps.com">app.protomaps.com (Minutely)</a>
+    </ul>
 </section>
 <section>
-    <h1>Aside: MapLibre vs. Leaflet</h1>
+    Filtering the Great Outdoors from the complete OSM extract
+     <pre>
+osmium tags-filter -o paths.osm.pbf utah.osm.pbf w/highway=path
+     </pre>
 </section>
 <section>
-    <h1>Let's publish!</h1>
+    Generating PMTiles archive
+     <pre>
+osmium export paths.osm.pbf -f geojsonseq | 
+    tippecanoe -o utah_highway_path.pmtiles -f
+     </pre>
+</section>
+<section>
+    <h3>Drag-and-drop inspect</h3>
+    <a target="_blank" href="https://protomaps.github.io/PMTiles/">PMTiles viewer</a>
+</section>
+<section>
+    <h3>Displaying in MapLibre</h3>
+    <img class="r-stretch" src="images/maplibre.png"></img>
+    <ul>
+        <li>WebGL vector tile, raster and terrain renderer</li>
+        <li>FOSS fork of Mapbox GL JS 1.0</li>
+    </ul>
+</section>
+<section>
+    <h3>Aside: MapLibre vs. Leaflet</h3>
+    <ul>
+        <li><a target="_blank" href="https://leafletjs.org">Leaflet</a>: less code weight, no map rotation or fractional zooms</li>
+        <li><a target="_blank" href="github.com/protomaps/protomaps-leaflet">protomaps-leaflet</a> plugin for vector rendering (we'll skip)</li>
+        <li>MapLibre recommended for greenfield projects</li>
+    </ul>
+</section>
+<section>
+    <h3>MapLibre PMTiles plugin</h3>
+     <pre><code data-noescape>
+let protocol = new pmtiles.Protocol();
+maplibregl.addProtocol("pmtiles",protocol.tile);
+     </code></pre>
+</section>
+<section>
+    <h3>MapLibre PMTiles plugin</h3>
+     <pre><code data-noescape>
+sources: {
+    trails: {
+        type: "vector",
+        url: "pmtiles://../utah_highway_path.pmtiles",
+        attribution: '© <a target="_blank" href="https://openstreetmap.org">OpenStreetMap contributors</a>'
+    }
+},
+     </code></pre>
+</section>
+<section>
+    <h3>Let's publish!</h3>
+    <img class="r-stretch" src="images/githubpages.png"></img>
+</section>
+<section>
+    <h3>Customization</h3>
+    <ul>
+        <li>Change the color of trail paths</li>
+        <li>Label the trails differently (trail_visibility)?</li>
+        <li>Use a different area</li>
+        <li>Use a different tag filter</li>
+    </ul>
+</section>
+<section>
+    <h3>Part 2</h3>
+    <p>What's our map missing?</p>
+    <img class="r-stretch" src="images/part2.png"></img>
+    <p><a target="_blank" href="part2/">(live demo)</a></p>
+</section>
+<section>
+    <img class="r-stretch" src="images/joerd.png"></img>
+    <ul>
+        <li>PMTiles is not just for raster data!</li>
+        <li><a target="_blank" href="https://github.com/tilezen/joerd">Mapzen Joerd</a> project</li>
+        <li>RGB Terrarium format for dynamic client-side hillshading</li>
+    </ul>
+</section>
+<section>
+    <h3>Using PMTiles CLI</h3>
+    <p>I pre-packaged a PMTiles of Joerd from zooms 0-12</p>
+    <pre>https://r2-public.protomaps.com/protomaps-sample-datasets/terrarium-z12.pmtiles</pre>
+    <p>try using <pre>pmtiles show</pre></p>
+</section>
+<section>
+    <h3>Using PMTiles extract</h3>
+    <pre>pmtiles extract \
+--bbox=-114.111749,36.937896,-108.97866,42.098695 \
+https://r2-public.protomaps.com/protomaps-sample-datasets/terrarium-z12.pmtiles \
+utah_terrarium.pmtiles</pre>
+</section>
+<section>
+    <h3>MapLibre PMTiles terrain</h3>
+     <pre><code data-noescape>
+terrain: {
+    type: "raster-dem",
+    url: "pmtiles://../utah_terrarium.pmtiles",
+    attribution: '© Joerd',
+    encoding: 'terrarium'
+}
+     </code></pre>
+</section>
+<section>
+    <h3>Customization</h3>
+    <ul>
+        <li>Change the area</li>
+        <li>Change the <a target="_blank" href="https://maplibre.org/maplibre-style-spec/layers/#hillshade">hillshade angle</a></li>
+    </ul>
+</section>
+<section>
+    <h3>Part 3</h3>
+    <p>What else is missing?</p>
+    <img class="r-stretch" src="images/part3.png"></img>
+    <p><a target="_blank" href="part3/">(live demo)</a></p>
+</section>
+<section>
+    <h3>Basemap vs. Overlay distinction</h3>
+    <ul>
+        <li>overlay = application specific data and interactivity</li>
+        <li>basemap = necessary context (labels...), eveything else in OSM</li>
+    </ul>
+</section>
+<section>
+    <h3>Protomaps Basemap</h3>
+    <ul>
+        <li>vector tiles, Zooms 0-15, OSM + <a target="_blank" href="http://naturalearthdata.com">Natural Earth</a></li>
+        <li>5 themes (light, dark, white, grayscale, black)</li>
+        <li>Daily build from fresh OSM data</li>
+        <li>View at <a target="_blank" href="https://maps.protomaps.com">maps.protomaps.com</a></li>
+    </ul>
 </section>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.js"></script>
 <script>
     Reveal.initialize({
         history: true,
-        transition: 'linear'
+        transition: 'linear',
+        plugins: [RevealHighlight]
     });
 </script>
 </body>
