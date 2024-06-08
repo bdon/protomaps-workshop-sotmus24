@@ -2,10 +2,10 @@ Workshop at [State of the Map US 2024](https://openstreetmap.us/events/state-of-
 
 # Parts
 
-* [Slides](/slides.html)
-* [Part 1](/part1)
-* [Part 2](/part2)
-* [Part 3](/part3)
+* [Slides](slides.html)
+* [Part 1](part1)
+* [Part 2](part2)
+* [Part 3](part3)
 
 ## Commands
 
